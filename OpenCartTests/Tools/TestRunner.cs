@@ -22,7 +22,7 @@ namespace OpenCartTests.Tools
             options.AddArgument("headless");
             options.AddArgument("disable-gpu");
             options.AddArgument("no-sandbox");
-            driver = new ChromeDriver(options);
+            driver = new ChromeDriver(ChromeDriverService.CreateDefaultService(), options, TimeSpan.FromMinutes(3));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(OpenCartURL);
