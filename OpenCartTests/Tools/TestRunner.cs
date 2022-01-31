@@ -24,7 +24,7 @@ namespace OpenCartTests.Tools
             options.AddArgument("no-sandbox");
             options.AddArgument("proxy-server='direct://'");
             options.AddArgument("proxy-bypass-list=*");
-            driver = new ChromeDriver(ChromeDriverService.CreateDefaultService(), options, TimeSpan.FromMinutes(3));
+            driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(OpenCartURL);
