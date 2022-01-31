@@ -21,6 +21,7 @@ namespace OpenCartTests.Tools
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("headless");
             options.AddArgument("disable-gpu");
+            options.AddArgument("no-sandbox");
             driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
